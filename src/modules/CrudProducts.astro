@@ -238,12 +238,11 @@ const [products,specs] = await connection.query('select * from voiture');
 
 								{
 									[
-										'Product Name',
-										'Technology',
+										'Modele',
+										'Marque',
 										'Description',
-										'ID',
 										'Price',
-										'Discount',
+										'Year','Thumbnail',
 										'Actions',
 									].map((th) => (
 										<th
@@ -278,28 +277,27 @@ const [products,specs] = await connection.query('select * from voiture');
 										</td>
 										<td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
 											<div class="text-base font-semibold text-gray-900 dark:text-white">
-												<data value="name">{product.Modele}</data>
+												<data value="Modele">{product.Modele}</data>
 											</div>
 											<div class="text-sm font-normal text-gray-500 dark:text-gray-400">
-												<data value="category">{product.idcategorie}</data>
+												<data value="marque">{product.idcategorie}</data>
 											</div>
 										</td>
 										<td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
 											<data value="technology">{product.Marque}</data>
 										</td>
 										<td class="max-w-sm p-4 overflow-hidden text-base font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
-											<data value="description">{product.Modele}</data>
-										</td>
-										<td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-											#<data value="id">{product.Id_Voiture}</data>
+											<data value="description">{product.Specification}</data>
 										</td>
 										<td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
 											<data value="price">{product.Prix}</data>
 										</td>
 										<td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-											<data value="discount">{product.Annee}</data>
+											<data value="year">{product.Annee}</data>
 										</td>
-
+										<td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+											<data value="thumbnail"><img class="h-20" src={product.Image} /></data>
+										</td>
 										<td class="p-4 space-x-2 whitespace-nowrap">
 											<button
 												type="button"

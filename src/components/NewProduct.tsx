@@ -13,7 +13,7 @@ export default function NewProduct() {
             password: "",
             database: "supercar"
         });
-        const [rows, fields] = await connection.execute("INSERT INTO voiture (Marque, Modele, Specifivation) VALUES(?, ?, '?')", [marque, modele, specification]);
+        const [rows, fields] = await connection.execute("INSERT INTO voiture (Marque, Modele, Specification) VALUES(?, ?, ?)", [marque, model, specification]);
     }
     return (
         <div class="space-y-4">
